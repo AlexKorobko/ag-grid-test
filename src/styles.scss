@@ -1,0 +1,16 @@
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.ag-theme-alpine {
+  @include ag-theme-alpine();
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+}
