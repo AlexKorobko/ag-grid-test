@@ -1,0 +1,17 @@
+<div *ngIf="showToolbar" class="toolbar">
+  <button id="toggle-selection" type="button" (click)="toggleSelectionMode()">
+    {{ isSelectionMode ? 'Disable' : 'Enable' }} Selection
+  </button>
+  <div id="total">Total: {{ getRowCount() }}</div>
+  <div *ngIf="isSelectionMode" id="selected">Selected: {{ getSelectedCount() }}</div>
+</div>
+<ag-grid-angular
+  #agGrid
+  class="ag-theme-alpine"
+  [rowHeight]="90"
+  [rowData]="videoData | async"
+  [columnDefs]="columnDefs"
+  [getContextMenuItems]="getContextMenuItems"
+  rowSelection="multiple"
+  (gridReady)="onGridReady()"
+></ag-grid-angular>

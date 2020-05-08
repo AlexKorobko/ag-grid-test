@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  padding: 5px;
+
+  > * {
+    margin-right: 10px;
+  }
+
+  > button {
+    width: 122px;
+  }
+}
+
+ag-grid-angular {
+  width: 100%;
+  flex-grow: 1;
+}
