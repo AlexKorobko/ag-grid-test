@@ -50,13 +50,14 @@ describe('VideoGridComponent', () => {
     }).compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach(async () => {
     fixture = TestBed.createComponent(VideoGridComponent);
     fixture.autoDetectChanges(true);
     component = fixture.componentInstance;
     element = fixture.nativeElement;
     debugElement = fixture.debugElement;
     fixture.detectChanges();
+    await fixture.whenStable();
   });
 
   it('should create', () => {
@@ -77,8 +78,6 @@ describe('VideoGridComponent', () => {
   });
 
   describe('row selection', () => {
-    beforeEach(() => fixture.whenStable());
-
     it('selection mode buttons works', async () => {
       expect(component.agGrid.columnApi.getColumn(SELECT_COL_ID).isVisible()).toBeFalse();
       expect(debugElement.query(By.css('#selected'))).toBeFalsy();
