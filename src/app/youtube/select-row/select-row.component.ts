@@ -26,6 +26,6 @@ export class SelectRowComponent implements ICellRendererAngularComp {
   }
 
   getRowSelected(): boolean {
-    return this.params.node.isSelected();
+    return this.params ? this.params.node.isSelected() : false;
   }
 }
