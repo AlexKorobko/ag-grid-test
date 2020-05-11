@@ -20,19 +20,17 @@ export class YoutubeService {
       )
       .pipe(
         map(response =>
-          response.items
-            .map(i => {
-              const data = i.snippet;
-              const id = i.id;
-              return {
-                thumbnails: data.thumbnails.default.url,
-                publishedAt: data.publishedAt,
-                title: data.title,
-                videoLink: `https://www.youtube.com/watch?v=${id.videoId}`,
-                description: data.description
-              };
-            })
-            .slice(0, 2)
+          response.items.map(i => {
+            const data = i.snippet;
+            const id = i.id;
+            return {
+              thumbnails: data.thumbnails.default.url,
+              publishedAt: data.publishedAt,
+              title: data.title,
+              videoLink: `https://www.youtube.com/watch?v=${id.videoId}`,
+              description: data.description
+            };
+          })
         )
       );
   }
